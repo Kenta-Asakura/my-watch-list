@@ -1,6 +1,30 @@
+.body {
+  color: black;
+  background-color: black;
+}
+
 .banner {
   background-position: center;
   background-size: cover;
-  height: 500px;
-  width: 1688px;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(210, 200, 200);
+}
+
+.lists h1 {
+  padding: 16px;
+}
+
+.list-card {
+  padding: 16px;
+  width: 150px;
+  height: 100px;
+}
+
+.list-container {
+  display: flex;
+  justify-content: space-evenly;
 }
