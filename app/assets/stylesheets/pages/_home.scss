@@ -1,12 +1,15 @@
+.index-container {
+
+}
+
 .body {
   color: black;
-  background-color: black;
 }
 
 .banner {
   background-position: center;
   background-size: cover;
-  height: 400px;
+  height: 500px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -14,17 +17,59 @@
   color: rgb(210, 200, 200);
 }
 
-.lists h1 {
-  padding: 16px;
+.banner h1 {
+  font-size: 72px;
 }
 
-.list-card {
-  padding: 16px;
-  width: 150px;
-  height: 100px;
-}
-
-.list-container {
+.card-container {
   display: flex;
-  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  padding: 24px;
+  padding: 24px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 1500px;
+
+}
+
+.card{
+  // padding: 24px;
+  margin: 24px;
+  height: 310px;
+  width: 280px;
+}
+
+.card-img {
+  height: 70%;
+  width: 100%;
+}
+
+.card-body {
+  align-items: center;
+  font-size: 32px;
+  font-weight: 100%;
+}
+
+.banner-movie {
+  top: 50px;
+  background-position: center;
+  background-size: cover;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(210, 200, 200);
+}
+
+.banner-movie h1 {
+  font-size: 64px;
 }

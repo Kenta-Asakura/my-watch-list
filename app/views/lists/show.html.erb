@@ -1,6 +1,20 @@
 <div class='container'>
-<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
-  <h1><%= @list.name %></h1>
+  <div class="banner-movie" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/149537547/original/226f89cfc7902b119a967bc9bd6d019c6732a05f/add-your-logo-in-this-funny-banner-video.png);">
+    <h1><%= @list.name %> movies</h1>
+  </div>
 
-<p><%= link_to 'Back to lists', lists_path %></p>
+  <div class='list-card'>
+      <div class='card'>
+        <% @list.bookmarks.each do |bookmark| %>
+        <%# <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/home-alone-1585876454.jpg" alt="" class='card-img-top'> %>
+          <%= image_tag bookmark.movie.poster_url  %>
+            <div class="card-body">
+              <h4><%= bookmark.movie.title %></h4>
+            </div>
+        <% end %>
+      </div>
+  </div>
+
+  <%= link_to 'Create a new list', new_list_path %>
+  <%= link_to 'Delete this list' %>
 </div>

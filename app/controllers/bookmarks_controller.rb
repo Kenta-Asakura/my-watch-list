@@ -27,7 +27,3 @@ class BookmarksController < ApplicationController
     params.require(:bookmark).permit(:comment)
   end
 end
-
-# bookmarks POST   /bookmarks(.:format) bookmarks#create
-# new_bookmark GET    /bookmarks/new(.:format) bookmarks#new
-# bookmark DELETE /bookmarks/:id(.:format) bookmarks#destroy
