@@ -15,6 +15,9 @@
                      data: {search_movies_target: "input"} %>
                      <% end %>
     </div>
+    <% Movie.all.each do |movie| %>
+      <%= movie.title %>
+    <% end %>
     <%# <% @lists.each do |list| %>
       <%# <div class='card'> %>
         <%# <%= cl_image_tag list.photo.key, class: 'card-img' %>
