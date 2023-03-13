@@ -10,7 +10,6 @@ Movie.destroy_all
 
 # movie sample = https://api.themoviedb.org/3/movie/157336?api_key=b53c36fe92aca91408d106a8a0f1dac8
 
-# def create_movie(result)
 def create_movie(title, overview, poster_path, vote_average)
   movie = Movie.new
   # url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=b53c36fe92aca91408d106a8a0f1dac8&language=en-US&page=1'
@@ -45,4 +44,6 @@ puts 'Creating movies'
 #   p create_movie(result['title'], result['overview'], result['poster_path'], result['vote_average'])
 # end
 
-FetchMovie.new.create_movies
+FetchMovie.new.create_movies('top_rated')
+FetchMovie.new.create_movies('now_playing')
+
