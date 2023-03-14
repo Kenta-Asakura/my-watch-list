@@ -1,0 +1,10 @@
+<% Movie.all.each do |movie| %>
+  <% if movie.group == 'top_rated' %>
+  <div class='card'>
+    <%= image_tag movie.poster_url, class: 'card-img' %>
+    <div class="card-body">
+      <%= movie.title %>
+    </div>
+  </div>
+  <% end %>
+<% end %>

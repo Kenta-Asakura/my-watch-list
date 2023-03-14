@@ -2,35 +2,9 @@
   <%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://kokuwa-ds.jp/wp-content/uploads/star_theaters_banner.jpg);">
     <h1>Movie house</h1>
   </div> %>
-  <div class='w-100 l-100'>
-    <div class='w-75'>
-      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="..." class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </div>
-
-    <div>
-    </div>
+  <div>
+    <%= render "shared/movies/now_playing" %>
   </div>
-
   <h1 class='header'>Top rated</h1>
   <div class='cards'>
     <%# <div data-controller='search-movies'>
@@ -43,12 +17,6 @@
                      data: {search_movies_target: "input"} %>
                      <%# <% end %>
     <%# </div> %>
-    <% Movie.all.each do |movie| %>
-    <div class='card'>
-      <%= image_tag movie.poster_url, class: 'card-img' %>
-      <div class="card-body">
-        <%= movie.title %>
-      </div>
-    </div>
-    <% end %>
+    <%= render "shared/movies/top_rated" %>
+  </div>
 </div>
