@@ -1,25 +1,19 @@
-.body {
-  color: black;
-}
-
-.banner {
-  background-position: center;
-  background-size: cover;
-  height: 500px;
-  width: 100%;
+.home-banner-container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: rgb(210, 200, 200);
+  height: 300px;
+  width: 100%;
 }
 
-.banner h1 {
-  font-size: 72px;
+.home-banner {
+  width: 80%;
+  height: 100%;
 }
 
 .header {
   padding: 24px;
   padding: 24px;
+  color: white;
 }
 
 .cards {
@@ -45,18 +39,16 @@
   font-weight: 100%;
 }
 
-.banner-movie {
-  top: 50px;
-  background-position: center;
-  background-size: cover;
-  height: 500px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgb(210, 200, 200);
-}
+// .carousel-now-playing2 {
+//   height: 400px;
+//   width: 100%;
+// }
 
-.banner-movie h1 {
-  font-size: 64px;
-}
+// .carousel-inner {
+//   height: 420px;
+// }
+
+// .carousel-item {
+//   height: 100%;
+//   width: 80%;
+// }

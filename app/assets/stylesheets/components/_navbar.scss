@@ -3,20 +3,29 @@
   top: 0;
   justify-content: space-between;
   background: rgb(69, 66, 66);
+  height: 56px;
+}
+
+.navbar-brand {
+ padding-left: 32px;
+}
+
+.collapse {
+  padding-right: 32px;
 }
 
 .nav-item {
-  height: 40px;
-  border-radius: 34px;
-  background-color: #5cf7e2;
-  width: 100px;
-  margin: 5px;
+  padding-right: 24px;
 }
 
-.nav-item {
-  font-weight: 600;
-  font-size: 20px;
-  color: black;
+.nav-link {
+  color: whitesmoke;
+  border-radius: 8px;
+}
+
+.nav-link:hover {
+  background-color: #616060b5;
+  color: whitesmoke;
 }
 
 .navbar-lewagon .navbar-collapse {

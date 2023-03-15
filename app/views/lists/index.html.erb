@@ -1,10 +1,11 @@
 <div class='fluid-container'>
-  <%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://kokuwa-ds.jp/wp-content/uploads/star_theaters_banner.jpg);">
-    <h1>Movie house</h1>
-  </div> %>
-  <div>
-    <%= render "shared/movies/now_playing" %>
+  <%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://kokuwa-ds.jp/wp-content/uploads/star_theaters_banner.jpg);"> %>
+  <div class='home-banner-container'>
+    <%= cl_image_tag('https://res.cloudinary.com/do7v9dtgm/image/upload/v1678857944/popcorn_vwkgom.jpg', class: 'home-banner') %>
   </div>
+    <h1>Movie house</h1>
+
+  <%# </div> %>
   <h1 class='header'>Top rated</h1>
   <div class='cards'>
     <%# <div data-controller='search-movies'>
