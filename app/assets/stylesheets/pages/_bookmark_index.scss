@@ -1,0 +1,12 @@
+.bookmarks-header {
+  padding: 24px;
+  padding-left: 36px;
+  font-size: 48px;
+}
+
+.bookmarked-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
