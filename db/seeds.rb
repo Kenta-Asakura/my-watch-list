@@ -26,15 +26,12 @@ def create_movie(title, overview, poster_path, vote_average)
   # movie.overview = overview['overview']
   # movie.poster_url = poster_path['poster_path']
   # movie.rating = vote_average['vote_average']
-
   movie.title = title
   movie.overview = overview
   movie.poster_url = poster_path
   movie.rating = vote_average
   movie.save
 end
-
-puts 'Creating movies'
 
 # url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=b53c36fe92aca91408d106a8a0f1dac8&language=en-US&page=1'
 # user_serialized = URI.open(url).read
@@ -44,6 +41,7 @@ puts 'Creating movies'
 #   p create_movie(result['title'], result['overview'], result['poster_path'], result['vote_average'])
 # end
 
+puts 'Creating movies'
+
 FetchMovie.new.create_movies('top_rated')
 FetchMovie.new.create_movies('now_playing')
-

@@ -1,0 +1,15 @@
+<div class='container'>
+  <h1>Bookmarks</h1>
+
+  <div>
+    <% @bookmarks.each do |bookmark| %>
+    <div class='card'>
+      <%= image_tag bookmark.movie.poster_url, class: 'card-img' %>
+      <div class="card-body">
+        <p>⭐<%= bookmark.movie.rating %></p>
+        <%= bookmark.movie.title %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

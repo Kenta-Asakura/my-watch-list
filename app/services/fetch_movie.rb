@@ -9,7 +9,6 @@ class FetchMovie
     toprated_array = user['results']
     toprated_array.each do |result|
     movie = Movie.new(
-      # title: @title
       group: grouping,
       title: result['title'],
       overview: result['overview'],
