@@ -1,9 +1,11 @@
 .navbar-lewagon {
-  position: sticky;
+  position: fixed;
   top: 0;
   justify-content: space-between;
   background: #353434;
   height: 56px;
+  width: 100%;
+  z-index: 9999;
 }
 
 .navbar-brand {
@@ -14,18 +16,25 @@
   padding-right: 32px;
 }
 
+.navbar-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .nav-item {
-  padding-right: 24px;
+  padding-right: 16px;
 }
 
 .nav-link {
   color: whitesmoke;
   border-radius: 8px;
   font-size: 24px;
+  display: inline-block;
 }
 
 .nav-link:hover {
-  background-color: #616060b5;
+  background-color: #61606082;
   color: whitesmoke;
 }
 

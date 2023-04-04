@@ -1,5 +1,6 @@
 class BookmarksController < ApplicationController
   def index
+    # @movie = Movie.find(params[:movie_id])
     @bookmarks = policy_scope(Bookmark)
   end
 
@@ -22,6 +23,6 @@ class BookmarksController < ApplicationController
   def destroy
     @bookmark = Bookmark.find(params[:movie_id])
     @bookmark.destroy
-    redirect_to movie_path(@bookmark.movie), status: :see_other
+    # redirect_to movie_path(@bookmark.movie), status: :see_other
   end
 end
