@@ -10,8 +10,10 @@
       </div>
         <%= image_tag movie.poster_url, class: 'card-img' %>
         <div class="card-body">
-          <p><%= movie.rating %>⭐</p>
-          <%= movie.title, class: 'movie-title'%>
+          <div class='card-info'>
+            <p><%= movie.rating %>⭐</p>
+            <p><%= movie.title %></p>
+          </div>
         </div>
         <%= link_to '', movie_path(movie), class: 'link_overlay' %>
     </div>
