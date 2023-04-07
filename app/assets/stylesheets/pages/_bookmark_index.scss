@@ -52,16 +52,9 @@
   padding: 4px 8px;
 }
 
-.bookmark-btn {
-  color: white;
-  height: 16px;
-  width: 16px;
-}
-
 .remove-bookmark-btn {
   height: 1em;
   width: 1em;
-  color: white;
 }
 .bookmark-case a:hover {
   color: white;
@@ -69,4 +62,14 @@
 
 .bookmark-case form {
   display: inline-block;
+}
+
+.bookmark-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: inherit;
+  cursor: pointer;
+  width: 2em;
+  color: white;
 }

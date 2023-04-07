@@ -3,15 +3,19 @@
       <div class='bookmark-case'>
         <% if @bookmarks.find_by(movie: movie) %>
           <%= simple_form_for @bookmarks.find_by(movie: movie), html: { method: :delete } do |f| %>
-            <%= f.button :submit, class: 'bookmark-btn' do %>
-              <span class='remove-bookmark-btn'><i class="fa-regular fa-bookmark"></i></span>
+            <%= button_tag type: 'submit', class: "bookmark-btn" do %>
+              <button type="submit" class="bookmark-btn">
+                <i class="fas fa-bookmark"></i>
+              </button>
             <% end %>
           <% end %>
         <% else %>
           <%= simple_form_for [movie, Bookmark.new] do |f| %>
             <%= f.hidden_field :movie_id, value: movie.id %>
-            <%= f.button :submit, class: 'btn btn-primary btn-sm' do %>
-              <i class="fa-regular fa-bookmark"></i>
+            <%= button_tag type: 'submit', class: "bookmark-btn" do %>
+              <button type="submit" class="bookmark-btn">
+                <i class="fa-regular fa-bookmark"></i>
+              </button>
             <% end %>
           <% end %>
         <% end %>

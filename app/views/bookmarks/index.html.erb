@@ -6,12 +6,20 @@
         <% if bookmarked_by_current_user?(bookmark.movie) %>
           <%= simple_form_for [bookmark.movie, bookmark], url: movie_bookmark_path(bookmark.movie, bookmark), method: :delete, remote: true do |f| %>
             <%= button_tag type: 'submit', class: "bookmark-btn" do %>
-              <i class="fa-regular fa-bookmark"></i>
+            <button type="submit" class="bookmark-btn">
+              <i class="fas fa-bookmark"></i>
+            </button>
             <% end %>
+              <%# <i class="fa-regular fa-bookmark"></i> %>
           <% end %>
         <% else %>
           <%= simple_form_for [bookmark.movie, bookmark], remote: true do |f| %>
-            <%= f.button :submit, "Add Bookmark", class: "btn btn-primary btn-sm" %>
+            <%#= f.button :submit, "Add Bookmark", class: "btn btn-primary btn-sm" %>
+             <%= button_tag type: 'submit', class: "bookmark-btn" do %>
+            <button type="submit" class="bookmark-btn">
+              <i class="fa-regular fa-bookmark"></i>
+            </button>
+            <% end %>
           <% end %>
         <% end %>
       </div>
