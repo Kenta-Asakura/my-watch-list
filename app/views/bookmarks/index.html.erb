@@ -1,27 +1,25 @@
-<div class='fluid-container'>
-  <h1 class='bookmarks-header'>Your watchlist</h1>
-  <div class='bookmarks-container'>
-    <% @bookmarks.each do |bookmark| %>
-      <div class='card'>
-        <div class='bookmark-case'>
-          <% if bookmarked_by_current_user?(bookmark.movie) %>
-            <%= simple_form_for [bookmark.movie, bookmark], url: movie_bookmark_path(bookmark.movie, bookmark), method: :delete, remote: true do |f| %>
-              <%= f.button :submit, class: "bookmark-btn" do %>
-                <link i class="far fa-bookmark"></i>
-              <% end %>
-            <% end %>
-          <% else %>
-            <%= simple_form_for [bookmark.movie, bookmark], remote: true do |f| %>
-              <%= f.button :submit, class: "btn btn-primary btn-sm" %>
+<h1 class='bookmarks-header'>Your watchlist</h1>
+<div class='bookmarks-container'>
+  <% @bookmarks.each do |bookmark| %>
+    <div class='card'>
+      <div class='bookmark-case'>
+        <% if bookmarked_by_current_user?(bookmark.movie) %>
+          <%= simple_form_for [bookmark.movie, bookmark], url: movie_bookmark_path(bookmark.movie, bookmark), method: :delete, remote: true do |f| %>
+            <%= button_tag type: 'submit', class: "bookmark-btn" do %>
+              <i class="fa-regular fa-bookmark"></i>
             <% end %>
           <% end %>
-        </div>
-        <%= image_tag bookmark.movie.poster_url, class: 'card-img' %>
-        <div class="card-body">
-          <p>⭐<%= bookmark.movie.rating %></p>
-          <%= bookmark.movie.title %>
-        </div>
+        <% else %>
+          <%= simple_form_for [bookmark.movie, bookmark], remote: true do |f| %>
+            <%= f.button :submit, "Add Bookmark", class: "btn btn-primary btn-sm" %>
+          <% end %>
+        <% end %>
       </div>
-    <% end %>
-  </div>
+      <%= image_tag bookmark.movie.poster_url, class: 'card-img' %>
+      <div class="card-body">
+        <p>⭐<%= bookmark.movie.rating %></p>
+        <%= bookmark.movie.title %>
+      </div>
+    </div>
+  <% end %>
 </div>
