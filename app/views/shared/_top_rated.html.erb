@@ -1,21 +1,28 @@
-<% Movie.all.each do |movie| %>
-  <% if movie.group == 'top_rated' %>
+  <% Movie.where(group: 'top_rated').each do |movie| %>
     <div class='card'>
       <div class='bookmark-case'>
-        <%= simple_form_for [movie, @bookmark] do |f| %>
-          <%= button_tag type: 'submit', class: 'bookmark-btn' do %>
-            <i class="fa-regular fa-bookmark"></i>
+        <% if @bookmarks.find_by(movie: movie) %>
+          <%= simple_form_for @bookmarks.find_by(movie: movie), html: { method: :delete } do |f| %>
+            <%= f.button :submit, class: 'btn btn-danger btn-sm' do %>
+              <i class="far fa-bookmark"></i> Remove Bookmark
+            <% end %>
+          <% end %>
+        <% else %>
+          <%= simple_form_for [movie, Bookmark.new] do |f| %>
+            <%= f.hidden_field :movie_id, value: movie.id %>
+            <%= f.button :submit, class: 'btn btn-primary btn-sm' do %>
+              <i class="far fa-bookmark"></i> Add Bookmark
+            <% end %>
           <% end %>
         <% end %>
       </div>
-        <%= image_tag movie.poster_url, class: 'card-img' %>
-        <div class="card-body">
-          <div class='card-info'>
-            <p><%= movie.rating %>⭐</p>
-            <p><%= movie.title %></p>
-          </div>
+      <%= image_tag movie.poster_url, class: 'card-img' %>
+      <div class="card-body">
+        <div class='card-info'>
+          <p><%= movie.rating %>⭐</p>
+          <p><%= movie.title %></p>
         </div>
-        <%= link_to '', movie_path(movie), class: 'link_overlay' %>
+      </div>
+      <%= link_to '', movie_path(movie), class: 'link_overlay' %>
     </div>
   <% end %>
-<% end %>

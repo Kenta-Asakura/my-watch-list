@@ -13,8 +13,12 @@ class BookmarkPolicy < ApplicationPolicy
   def new?
     create?
   end
-
+  
   def create?
-    true
+    user.present?
+  end
+
+  def destroy?
+    user.present? && record.user == user
   end
 end

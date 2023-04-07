@@ -4,9 +4,63 @@
   font-size: 48px;
 }
 
-.bookmarked-cards {
+.bookmarks-container {
+  height: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.card {
+  position: relative;
+  height: 450px;
+  width: 250px;
+  margin: 8px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0px 5px 10px 0px rgba(242, 244, 244, 0.7);
+}
+
+.card-img {
+  height: 75%;
+  width: 100%;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a1a;
+  color: whitesmoke;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  display: inline-block;
+  overflow: hidden;
+  padding: 12px;
+  height: 25%;
+}
+
+.bookmark-case {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 8px;
+  z-index: 1;
+  border-radius: 12px;
+  padding: 4px 8px;
+}
+
+.bookmark-case a {
+  color: black;
+}
+
+.bookmark-case a:hover {
+  color: white;
+}
+
+.bookmark-case form {
+  display: inline-block;
 }

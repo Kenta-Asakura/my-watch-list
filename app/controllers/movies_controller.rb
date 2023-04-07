@@ -6,6 +6,7 @@ class MoviesController < ApplicationController
 
   def index
     @movies = policy_scope(Movie)
-    @bookmark = Bookmark.new
+    @bookmarks = current_user.bookmarks.where(movie: @movies)
+    # @bookmark = Bookmark.new
   end
 end
