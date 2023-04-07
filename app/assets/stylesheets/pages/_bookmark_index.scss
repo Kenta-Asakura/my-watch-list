@@ -49,14 +49,20 @@
   right: 0;
   margin: 8px;
   z-index: 1;
-  border-radius: 12px;
   padding: 4px 8px;
 }
 
-.bookmark-case a {
-  color: black;
+.bookmark-btn {
+  // color: white;
+  // height: 16px;
+  // width: 16px;
 }
 
+.remove-bookmark-btn {
+  height: 1em;
+  width: 1em;
+  color: white;
+}
 .bookmark-case a:hover {
   color: white;
 }

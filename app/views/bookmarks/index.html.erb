@@ -5,12 +5,14 @@
       <div class='card'>
         <div class='bookmark-case'>
           <% if bookmarked_by_current_user?(bookmark.movie) %>
-            <%= simple_form_for [bookmark.movie, bookmark], url: movie_bookmarks_path(bookmark.movie, bookmark), method: :delete, remote: true do |f| %>
-              <%= f.button :submit, "Remove Bookmark", class: "btn btn-danger btn-sm" %>
+            <%= simple_form_for [bookmark.movie, bookmark], url: movie_bookmark_path(bookmark.movie, bookmark), method: :delete, remote: true do |f| %>
+              <%= f.button :submit, class: "bookmark-btn" do %>
+                <link i class="far fa-bookmark"></i>
+              <% end %>
             <% end %>
           <% else %>
             <%= simple_form_for [bookmark.movie, bookmark], remote: true do |f| %>
-              <%= f.button :submit, "Add Bookmark", class: "btn btn-primary btn-sm" %>
+              <%= f.button :submit, class: "btn btn-primary btn-sm" %>
             <% end %>
           <% end %>
         </div>

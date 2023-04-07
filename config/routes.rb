@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   root to: 'movies#index'
 
   resources :movies, only: [:index, :show] do
-    resources :bookmarks, only: [:create]
+    resources :bookmarks, only: [:create, :destroy]
   end
 
+  # works together
   resources :bookmarks, only: [:index, :destroy]
-  delete '/movies/:movie_id/bookmarks/:id', to: 'bookmarks#destroy', as: :movie_bookmark
+  # delete '/movies/:movie_id/bookmarks/:id', to: 'bookmarks#destroy', as: :movie_bookmark
 end
