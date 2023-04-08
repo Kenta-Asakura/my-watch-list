@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   resources :movies, only: [:index, :show] do
     resources :bookmarks, only: [:create, :destroy]
+    collection do
+      get :top_rated
+      get :now_playing
+    end
   end
 
   # works together

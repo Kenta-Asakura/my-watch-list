@@ -1,5 +1,7 @@
-<div class='cards-container'>
-  <% Movie.where(group: 'top_rated').each do |movie| %>
+<h1 class='custom-page-header'>Now playing</h1>
+<div class='custom-page-container'>
+  <% Movie.where(group: 'now_playing').each do |movie| %>
+    <%#= link_to movie_path(movie) do %>
       <div class='card'>
         <div class='bookmark-case'>
           <% if @bookmarks.find_by(movie: movie) %>
@@ -21,7 +23,9 @@
             <% end %>
           <% end %>
         </div>
+      <%# <a href="= movie_path(movie)"> %>
         <%= image_tag movie.poster_url, class: 'card-img' %>
+      <%# </a> %>
         <div class="card-body">
           <div class='card-info'>
             <p><%= movie.rating %>⭐</p>

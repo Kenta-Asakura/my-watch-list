@@ -21,4 +21,12 @@ class MoviePolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def top_rated?
+    true
+  end
+
+  def now_playing?
+    true
+  end
 end

@@ -9,4 +9,16 @@ class MoviesController < ApplicationController
     @bookmarks = current_user.bookmarks.where(movie: @movies)
     # @bookmark = Bookmark.new
   end
+
+  def now_playing
+    @movies = Movie.where(group: 'now_playing')
+    authorize @movies
+    @bookmarks = current_user.bookmarks.where(movie_id: @movies.pluck(:id))
+  end
+
+  def top_rated
+    @movies = Movie.where(group: 'top_rated')
+    authorize @movies
+    @bookmarks = current_user.bookmarks.where(movie_id: @movies.pluck(:id))
+  end
 end
