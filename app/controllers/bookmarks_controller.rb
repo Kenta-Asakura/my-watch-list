@@ -12,14 +12,11 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new(user: current_user, movie: @movie)
     authorize @bookmark
     if @bookmark.save
-      redirect_to @movie, notice: 'Bookmark was successfully created.'
+      flash[:notice] = 'Bookmark was successfully created.'
     end
-    # else
-    #   render :new, status: :unprocessable_entity
 
     @bookmark = Bookmark.find(params[:id])
     # @bookmark = Bookmark.find_by(user: current_user, movie: @movie)
-
     if @bookmark
       @bookmark.destroy
     else
@@ -27,15 +24,13 @@ class BookmarksController < ApplicationController
       authorize @bookmark
       @bookmark.save
     end
-
-    redirect_to @movie
   end
 
   def destroy
     @bookmark = Bookmark.find(params[:id])
     authorize @bookmark
     @bookmark.destroy
-    redirect_to bookmarks_path, notice: "Bookmark was successfully deleted."
+    flash[:notice] = "Bookmark was successfully deleted."
   end
 
   private

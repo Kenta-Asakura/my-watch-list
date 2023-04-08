@@ -1,6 +1,7 @@
 <h1 class='bookmarks-header'>Your watchlist</h1>
 <div class='bookmarks-container'>
   <% @bookmarks.each do |bookmark| %>
+    <% link_to  %>
     <div class='card'>
       <div class='bookmark-case'>
         <% if bookmarked_by_current_user?(bookmark.movie) %>

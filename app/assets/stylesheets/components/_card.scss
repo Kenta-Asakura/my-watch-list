@@ -1,23 +1,25 @@
 .movies-container {
+  gap: 2rem;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .card {
   position: relative;
-  height: 450px;
-  width: 250px;
-  margin: 8px;
+  height: 370px;
+  width: 200px;
+  // margin: 8px;
   margin-bottom: 24px;
   border-radius: 12px;
   border: none;
   box-shadow: 0px 5px 10px 0px rgba(242, 244, 244, 0.7);
+  overflow: hidden;
 }
 
 .card-img {
-  height: 75%;
+  height: 72%;
   width: 100%;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
@@ -26,9 +28,26 @@
 .card-body {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   background-color: #1a1a1a;
   color: whitesmoke;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   overflow: hidden;
+  padding: 12px;
+  white-space: normal;
+
+  p {
+    margin-bottom: 0.3rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.5s;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 }
