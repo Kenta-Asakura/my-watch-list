@@ -25,11 +25,22 @@
 
 .movies-header-container {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    font-size: 1.5rem;
+    color: #73c3f9;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 .movies-header {
   color: white;
   border-left: 7px solid#73c3f9;
   padding-left: 1rem;
-  // margin-left: 7%;
 }

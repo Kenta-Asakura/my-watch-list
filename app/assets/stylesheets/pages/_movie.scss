@@ -1,36 +1,41 @@
+.movie-container {
+  padding: 5% 10% 0% 10%;
+}
+
 .movie-main-content {
   display: flex;
+  margin-top: 3%;
 }
 
 .movie-back-btn {
-
+  font-size: 2rem;
 }
 
 .show-movie {
   border-radius: 40px;
-  height: 600px;
-  width: 500px;
+  height: 38rem;
+  width: 30rem;
 }
 
 .movie-details {
-  padding-left: 110px;
+  padding-left: 10%;
 }
 
 .details-header {
   display: flex;
   align-items: center;
-}
 
-.details-header h1 {
-  font-size: 48px;
-  font-weight: 600;
-}
+  h1 {
+    font-size: 3rem;
+    font-weight: 600;
+  }
 
-.details-header span {
-  font-size: 32px;
-  padding-left: 24px;
+  span {
+    font-size: 2rem;
+    padding-left: 24px;
+  }
 }
 
 #movie-overview {
-  font-size: 24px;
+  font-size: 1.3rem;
 }

@@ -4,12 +4,16 @@
     <h1>Movie house</h1>
   </div>
   <div class='movies-container'>
-    <h1 class='movies-header'>Top rated</h1>
+   <div class='movies-header-container'>
+      <h1 class='movies-header'>Top rated</h1>
+      <%= link_to 'See all', top_rated_movies_path %>
+    </div>
     <%= render "shared/top_rated" %>
   </div>
   <div class='movies-container'>
     <div class='movies-header-container'>
       <h1 class='movies-header'>Now playing</h1>
+      <%= link_to 'See all', now_playing_movies_path %>
     </div>
     <%= render "shared/now_playing" %>
   </div>
