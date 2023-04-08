@@ -3,8 +3,12 @@
     <%= cl_image_tag('https://res.cloudinary.com/do7v9dtgm/image/upload/v1678887570/pexels-nathan-engel-436413_tcvgq0.jpg', class: 'home-banner') %>
     <h1>Movie house</h1>
   </div>
-  <div class='top-rated-container'>
-    <h1 class='top-rated-header'>Top rated</h1>
+  <div class='movies-container'>
+    <h1 class='movies-header'>Top rated</h1>
     <%= render "shared/top_rated" %>
+  </div>
+  <div class='movies-container'>
+    <h1 class='movies-header'>Now playing</h1>
+    <%= render "shared/now-playing" %>
   </div>
 </div>
