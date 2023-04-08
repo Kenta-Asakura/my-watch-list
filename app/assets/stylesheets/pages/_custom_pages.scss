@@ -1,5 +1,5 @@
 .custom-page-container {
-  padding: 3rem 5rem 0rem 5rem;
+  padding: 3rem 5rem 3rem 5rem;
   gap: 2rem;
   height: 100%;
   display: flex;
@@ -15,8 +15,12 @@
 
   h1 {
     color: white;
-    border-bottom: 7px solid#73c3f9;
-    font-size: 3.5rem;
-    width: 17%;
+    border-bottom: 5px solid#73c3f9;
+    font-size: 3rem;
+    width: 14rem;
   }
+}
+
+#now-playing-header {
+  width: 19rem;
 }

@@ -4,6 +4,7 @@
   align-items: center;
   height: 400px;
   width: 100%;
+  margin-bottom: 5%;
 }
 
 .home-banner-container h1 {
@@ -20,7 +21,7 @@
 .movies-container {
   display: flex;
   flex-direction: column;
-  padding: 5rem 8rem 3rem 8rem;
+  padding: 0rem 8rem 3rem 8rem;
 }
 
 .movies-header-container {

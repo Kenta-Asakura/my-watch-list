@@ -1,10 +1,5 @@
 .cards-container {
   padding-top: 1rem;
-  // height: 370px;
-  // gap: 2rem;
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: center;
   height: 100%;
   overflow-x: scroll;
   white-space: nowrap;
@@ -14,14 +9,12 @@
   position: relative;
   height: 100%;
   width: 200px;
-  // margin: 8px;
-  margin-bottom: 1rem;
+  margin: 0rem 0rem 0.6rem 1rem;
   border-radius: 12px;
   border: none;
   box-shadow: 0px 5px 10px 0px rgba(242, 244, 244, 0.7);
   overflow: hidden;
   display: inline-block;
-  margin-right: 1rem;
 }
 
 .card-img {
@@ -40,8 +33,9 @@
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   overflow: hidden;
-  height: 28%;
+  height: 7rem;
   white-space: normal;
+  padding: 12px;
 
   p {
     margin-bottom: 0.3rem;
