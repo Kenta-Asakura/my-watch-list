@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     end
   end
 
-  # works together
   resources :bookmarks, only: [:index, :destroy]
   # delete '/movies/:movie_id/bookmarks/:id', to: 'bookmarks#destroy', as: :movie_bookmark
 end
