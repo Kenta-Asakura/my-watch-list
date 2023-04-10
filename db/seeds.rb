@@ -43,5 +43,5 @@ end
 
 puts 'Creating movies'
 
-FetchMovie.new.create_movies('top_rated')
-FetchMovie.new.create_movies('now_playing')
+# FetchMovie.new.create_movies('top_rated')
+# FetchMovie.new.create_movies('now_playing')
