@@ -1,4 +1,4 @@
-# Movie.destroy_all
+Movie.destroy_all
 
 # tmbd apikey = b53c36fe92aca91408d106a8a0f1dac8
 
@@ -10,8 +10,8 @@
 
 # movie sample = https://api.themoviedb.org/3/movie/157336?api_key=b53c36fe92aca91408d106a8a0f1dac8
 
-# def create_movie(title, overview, poster_path, vote_average)
-#   movie = Movie.new
+def create_movie(title, overview, poster_path, vote_average, group)
+  movie = Movie.new
   # url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=b53c36fe92aca91408d106a8a0f1dac8&language=en-US&page=1'
   # user_serialized = URI.open(url).read
   # user = JSON.parse(user_serialized)
@@ -26,12 +26,14 @@
   # movie.overview = overview['overview']
   # movie.poster_url = poster_path['poster_path']
   # movie.rating = vote_average['vote_average']
-#   movie.title = title
-#   movie.overview = overview
-#   movie.poster_url = poster_path
-#   movie.rating = vote_average
-#   movie.save
-# end
+
+  movie.title = title
+  movie.overview = overview
+  movie.poster_url = poster_path
+  movie.rating = vote_average
+  movie.group = group
+  movie.save
+end
 
 # url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=b53c36fe92aca91408d106a8a0f1dac8&language=en-US&page=1'
 # user_serialized = URI.open(url).read
@@ -43,5 +45,5 @@
 
 puts 'Creating movies'
 
-# FetchMovie.new.create_movies('top_rated')
-# FetchMovie.new.create_movies('now_playing')
+FetchMovies.new.create_movies('top_rated')
+FetchMovies.new.create_movies('now_playing')
