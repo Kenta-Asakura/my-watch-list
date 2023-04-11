@@ -29,7 +29,7 @@ def create_movie(title, overview, poster_path, vote_average, group)
 
   movie.title = title
   movie.overview = overview
-  movie.poster_url = poster_path
+  movie.poster_url = "http://image.tmdb.org/t/p/w500#{poster_path}"
   movie.rating = vote_average
   movie.group = group
   movie.save
