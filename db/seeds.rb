@@ -22,10 +22,6 @@ def create_movie(title, overview, poster_path, vote_average, group)
   # movie.poster_url = result['poster_path']
   # movie.rating = result['vote_average']
 
-  # movie.title = title['title']
-  # movie.overview = overview['overview']
-  # movie.poster_url = poster_path['poster_path']
-  # movie.rating = vote_average['vote_average']
 
   movie.title = title
   movie.overview = overview
@@ -47,3 +43,4 @@ puts 'Creating movies'
 
 FetchMovies.new.create_movies('top_rated')
 FetchMovies.new.create_movies('now_playing')
+FetchMovies.new.create_movies('upcoming')

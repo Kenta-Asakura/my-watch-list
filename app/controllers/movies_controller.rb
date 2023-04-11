@@ -21,4 +21,10 @@ class MoviesController < ApplicationController
     authorize @movies
     @bookmarks = current_user.bookmarks.where(movie_id: @movies.pluck(:id))
   end
+
+  def upcoming
+    @movies = Movie.where(group: 'upcoming')
+    authorize @movies
+    @bookmarks = current_user.bookmarks.where(movie_id: @movies.pluck(:id))
+  end
 end

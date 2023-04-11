@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     collection do
       get :top_rated
       get :now_playing
+      get :upcoming 
     end
   end
 

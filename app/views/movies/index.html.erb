@@ -17,4 +17,11 @@
     </div>
     <%= render "shared/now_playing" %>
   </div>
+  <div class='movies-container'>
+    <div class='movies-header-container'>
+      <h1 class='movies-header'>Upcoming</h1>
+      <%= link_to 'See all', upcoming_movies_path %>
+    </div>
+    <%= render "shared/upcoming" %>
+  </div>
 </div>
