@@ -29,4 +29,8 @@ class MoviePolicy < ApplicationPolicy
   def now_playing?
     true
   end
+
+  def upcoming?
+    true
+  end
 end
