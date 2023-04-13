@@ -15,10 +15,10 @@
             <% end %>
           <% end %>
         <% else %>
-          <%= simple_form_for [movie, Bookmark.new] do |f| %>
+          <%= simple_form_for [movie, Bookmark.new], data: {create_bookmark_target: 'form', action: 'submit->create-bookmark#submitForm'} do |f| %>
             <%= f.hidden_field :movie_id, value: movie.id %>
             <%= button_tag type: 'submit', class: "bookmark-btn" do %>
-              <button type="submit" class="bookmark-btn" data-action="turbo:before-fetch-response@document->create-bookmark#submitForm">
+              <button type="submit" class="bookmark-btn">
                 <i class="fa-regular fa-bookmark"></i>
               </button>
             <% end %>
