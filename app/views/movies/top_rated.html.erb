@@ -4,7 +4,7 @@
 <div class='custom-page-container'>
   <% @movies.each do |movie| %>
     <div class='card'>
-      <div class='bookmark-case'>
+      <div class='bookmark-case' data-controller= 'create-bookmark'>
         <% if @bookmarks.find_by(movie: movie) %>
           <%= simple_form_for @bookmarks.find_by(movie: movie), html: { method: :delete } do |f| %>
           <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
@@ -18,7 +18,7 @@
           <%= simple_form_for [movie, Bookmark.new] do |f| %>
             <%= f.hidden_field :movie_id, value: movie.id %>
             <%= button_tag type: 'submit', class: "bookmark-btn" do %>
-              <button type="submit" class="bookmark-btn">
+              <button type="submit" class="bookmark-btn" data-action="turbo:before-fetch-response@document->create-bookmark#submitForm">
                 <i class="fa-regular fa-bookmark"></i>
               </button>
             <% end %>
