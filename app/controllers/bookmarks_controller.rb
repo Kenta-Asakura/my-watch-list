@@ -11,18 +11,14 @@ class BookmarksController < ApplicationController
     @movie = Movie.find(params[:movie_id])
     @bookmark = Bookmark.new(user: current_user, movie: @movie)
     authorize @bookmark
-    if @bookmark.save
-      flash[:notice] = 'Bookmark was successfully created.'
-    end
+    @bookmark.save
 
     @bookmark = Bookmark.find(params[:id])
-    # @bookmark = Bookmark.find_by(user: current_user, movie: @movie)
     if @bookmark
       @bookmark.destroy
-    else
-      @bookmark = Bookmark.new(user: current_user, movie: @movie)
-      authorize @bookmark
-      @bookmark.save
+    # else
+    #   @bookmark.save
+    #   flash[:notice] = 'Bookmark was successfully created.'
     end
   end
 
@@ -30,7 +26,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
     authorize @bookmark
     @bookmark.destroy
-    flash[:notice] = "Bookmark was successfully deleted."
+    flash[:notice] = 'Bookmark was successfully deleted.'
   end
 
   private
