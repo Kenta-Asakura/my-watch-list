@@ -10,13 +10,10 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new(user: current_user, movie: @movie)
     authorize @bookmark
 
-    @bookmark.save
-    @bookmark = Bookmark.find(params[:id])
-    if @bookmark
-      # @bookmark.destroy
-    # else
-    #   @bookmark.save
-      return flash[:notice] = 'Bookmark was successfully created.'
+    if @bookmark.save
+      redirect_to movies_path, notice: 'Bookmark was successfully created.'
+    else
+      redirect_to movies_path, alert: 'Failed to create bookmark.'
     end
   end
 
@@ -24,12 +21,13 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
     authorize @bookmark
 
-    if @bookmark
-      @bookmark.destroy
-      flash[:notice] = 'Bookmark was successfully deleted.'
+    if @bookmark.destroy
+      redirect_to movies_path, notice: 'Bookmark was successfully deleted.'
+    else
+      redirect_to movies_path, alert: 'Failed to delete bookmark.'
     end
   end
-
+  
   private
 
   def bookmarked_by_current_user?(movie)
