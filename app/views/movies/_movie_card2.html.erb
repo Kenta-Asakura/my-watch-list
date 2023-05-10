@@ -1,0 +1,15 @@
+<div class='card'>
+  <div class='bookmark-case' data-controller= 'create-bookmark'>
+    <% if bookmarked_by_current_user?(movie) %>
+      <%= render partial: 'bookmarks/destroy', locals: { movie: movie } %>
+    <% else %>
+      <%= render partial: 'bookmarks/create', locals: { movie: movie } %>
+    <% end %>
+  </div>
+  <%= image_tag movie.poster_url, class: 'card-img' %>
+  <div class="card-body">
+    <div class='card-info'>
+      <p><%= movie.rating %>⭐</p>
+      <p><a href="<%= movie_path(movie) %>"><%= movie.title %></a></p>
+    </div>
+  </div>

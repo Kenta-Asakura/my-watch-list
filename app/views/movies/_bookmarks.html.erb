@@ -1,0 +1,21 @@
+<div class='bookmark-case' data-controller= 'create-bookmark'>
+  <% if @bookmarks.find_by(movie: movie) %>
+    <%= simple_form_for @bookmarks.find_by(movie: movie), html: { method: :delete } do |f| %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= button_tag type: 'submit', class: "bookmark-btn" do %>
+        <button type="submit" class="bookmark-btn">
+          <i class="fas fa-bookmark"></i>
+        </button>
+      <% end %>
+    <% end %>
+  <% else %>
+    <%= simple_form_for [movie, Bookmark.new], data: {create_bookmark_target: 'form', action: 'submit->create-bookmark#submitForm'} do |f| %>
+      <%= f.hidden_field :movie_id, value: movie.id %>
+      <%= button_tag type: 'submit', class: "bookmark-btn" do %>
+        <button type="submit" class="bookmark-btn">
+          <i class="fa-regular fa-bookmark"></i>
+        </button>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

@@ -3,38 +3,6 @@
 </div>
 <div class='custom-page-container'>
   <% Movie.where(group: 'now_playing').each do |movie| %>
-    <%#= link_to movie_path(movie) do %>
-      <div class='card'>
-        <div class='bookmark-case'>
-          <% if @bookmarks.find_by(movie: movie) %>
-            <%= simple_form_for @bookmarks.find_by(movie: movie), html: { method: :delete } do |f| %>
-              <%= button_tag type: 'submit', class: "bookmark-btn" do %>
-                <button type="submit" class="bookmark-btn">
-                  <i class="fas fa-bookmark"></i>
-                </button>
-              <% end %>
-            <% end %>
-          <% else %>
-            <%= simple_form_for [movie, Bookmark.new] do |f| %>
-              <%= f.hidden_field :movie_id, value: movie.id %>
-              <%= button_tag type: 'submit', class: "bookmark-btn" do %>
-                <button type="submit" class="bookmark-btn">
-                  <i class="fa-regular fa-bookmark"></i>
-                </button>
-              <% end %>
-            <% end %>
-          <% end %>
-        </div>
-      <%# <a href="= movie_path(movie)"> %>
-        <%= image_tag movie.poster_url, class: 'card-img' %>
-      <%# </a> %>
-        <div class="card-body">
-          <div class='card-info'>
-            <p><%= movie.rating %>⭐</p>
-            <p><a href="<%= movie_path(movie) %>"><%= movie.title %></a></p>
-          </div>
-        </div>
-      </div>
-    <%# end %>
+    <%= render partial: 'movie_card', locals: { movie: movie } %>
   <% end %>
 </div>
