@@ -1,31 +1,17 @@
 import { Controller } from "@hotwired/stimulus"
 
+// Connects to data-controller="create-bookmark"
 export default class extends Controller {
-  static targets = ['form']
+  static targets = ['bookmark']
 
   connect() {
-    console.log('hello from create');
+    console.log(this.element);
+    console.log(this.bookmarkTarget);
   }
 
-  submitForm() {
-    const forms = document.querySelectorAll(".bookmark-btn")
-    forms.forEach(form => {
-      form.preventDefault();
-    });
+  send(event) {
+    event.preventDefault
+
+    console.log("TODO: send request in AJAX")
   }
-
-  // submitForm() {
-    //     btn.addEventListener("click", (e) => {
-  //       e.preventDefault();
-  //   });
-  // }
-
-  // submitForm() {
-  //   const forms = document.querySelectorAll(".bookmark-btn")
-  //   forms.forEach(form=> {
-  //     form.addEventListener("click", (e) => {
-  //             e.preventDefault();
-  //           });
-  //   });
-  // }
 }
