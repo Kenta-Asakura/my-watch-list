@@ -7,11 +7,5 @@ import { application } from "./application"
 import CreateBookmarkController from "./create_bookmark_controller"
 application.register("create-bookmark", CreateBookmarkController)
 
-import DestroyBookmarkController from "./destroy_bookmark_controller"
-application.register("destroy-bookmark", DestroyBookmarkController)
-
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
-
 import SearchMoviesController from "./search_movies_controller"
 application.register("search-movies", SearchMoviesController)
