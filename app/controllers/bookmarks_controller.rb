@@ -12,11 +12,11 @@ class BookmarksController < ApplicationController
 
     respond_to do |format|
       if @bookmark.save
-        format.html { redirect_to movies_path, notice: 'Bookmark was successfully created.' }
-        format.js   # This will render create.js.erb
+        format.html { redirect_to request.referer, notice: 'Bookmark was successfully created.' }
+        format.json { render :create, status: :created }  # Render the create.js.erb template without redirecting
       else
-        format.html { redirect_to movies_path, alert: 'Failed to create bookmark.' }
-        format.js   # This will render create.js.erb
+        format.html { redirect_to request.referer, alert: 'Failed to create bookmark.' }
+        format.json { render :create, status: :unprocessable_entity }  # Render the create.js.erb template without redirecting
       end
     end
   end
