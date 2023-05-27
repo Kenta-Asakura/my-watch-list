@@ -3,12 +3,16 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="create-bookmark"
 export default class extends Controller {
   connect() {
-    console.log('hello from create bookmark');
+    console.log('HELLO!!!!');
+    console.log(this.element);
+    console.log(this.itemsTarget)
+    console.log(this.formTarget)
   }
 
   send(event) {
-    event.preventDefault
+    event.preventDefault();
 
+    console.log('AJAX request sent');
     fetch(this.formTarget.action, {
       method: "POST",
       headers: { "Accept": "application/json" },

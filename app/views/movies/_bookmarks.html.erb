@@ -7,7 +7,7 @@
       <% end %>
     <% end %>
   <% else %>
-    <%= simple_form_for [movie, Bookmark.new], data: { create_bookmark_target: "bookmark", action: "submit->create-bookmark#send" }, remote: true do |f| %>
+    <%= simple_form_for([movie, Bookmark.new], data: {create_bookmark_target: "bookmark", action: "submit->create-bookmark#send" }, remote: true) do |f| %>
       <%= f.hidden_field :movie_id, value: movie.id %>
       <%= button_tag type: 'submit', class: "bookmark-btn" do %>
         <i class="fa-regular fa-bookmark"></i>

@@ -6,6 +6,3 @@ import { application } from "./application"
 
 import CreateBookmarkController from "./create_bookmark_controller"
 application.register("create-bookmark", CreateBookmarkController)
-
-import SearchMoviesController from "./search_movies_controller"
-application.register("search-movies", SearchMoviesController)
