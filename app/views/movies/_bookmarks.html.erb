@@ -1,13 +1,15 @@
 <div class='bookmark-case' data-controller='create-bookmark'>
   <% if @bookmarks.find_by(movie: movie) %>
-    <%= simple_form_for @bookmarks.find_by(movie: movie), data: { create_bookmark_target: "bookmark", action: "submit->create-bookmark#send" }, remote: true do |f| %>
+    <%= simple_form_for @bookmarks.find_by(movie: movie) do |f| %>
+    <%#= simple_form_for @bookmarks.find_by(movie: movie), data: { create_bookmark_target: "bookmark", action: "submit->create-bookmark#send" }, remote: true do |f| %>
       <%= f.hidden_field :authenticity_token, value: form_authenticity_token %>
       <%= button_tag type: 'submit', class: "bookmark-btn" do %>
         <i class="fas fa-bookmark"></i>
       <% end %>
     <% end %>
   <% else %>
-    <%= simple_form_for([movie, Bookmark.new], data: {create_bookmark_target: "bookmark", action: "submit->create-bookmark#send" }, remote: true) do |f| %>
+    <%= simple_form_for([movie, Bookmark.new]) do |f| %>
+    <%#= simple_form_for([movie, Bookmark.new], data: {create_bookmark_target: "bookmark", action: "submit->create-bookmark#send" }, remote: true) do |f| %>
       <%= f.hidden_field :movie_id, value: movie.id %>
       <%= button_tag type: 'submit', class: "bookmark-btn" do %>
         <i class="fa-regular fa-bookmark"></i>
